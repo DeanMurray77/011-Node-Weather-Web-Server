@@ -33,7 +33,7 @@ const geocode = (address, callback) => { //definition.
         if(error) {
             callback("The system was unable to connect with the location serice");
         } else if (response.body.message) {
-            callback("The location system returned an error. " + error);
+            callback("The location system returned an error. " + response.body.message);
         } else if (response.body.features.length === 0) {
             callback("No such location found. Please try again with a different location.");
         } else {
