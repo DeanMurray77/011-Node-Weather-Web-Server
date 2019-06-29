@@ -1,8 +1,23 @@
-const config = require('../config');
+
 const request = require('request');
 
-const mapBoxURL = process.env.mapBoxURL || config.mapBoxURL;
-const mapBoxAPIKey = process.mapBoxAPIKey || config.mapBoxAPIKey;
+let mapBoxURL;
+let mapBoxAPIKey;
+
+//Deal with Heroku not having the local config file
+if(process.env.mapBoxURL && process.env.mapBoxAPIKey) {
+    //If process.env vars defined, then use heroku stuff
+    mapBoxURL = process.env.mapBoxURL;
+    mapBoxAPIKey = process.mapBoxAPIKey;
+} else {
+    //Not on Heroku, so we can require the local config file.
+    const config = require('../config');
+
+    mapBoxURL = config.mapBoxURL;
+    mapBoxAPIKey = config.mapBoxAPIKey;
+}
+
+
 
 const geocode = (address, callback) => { //definition.
     // callback in definiton means that function will wait for an
