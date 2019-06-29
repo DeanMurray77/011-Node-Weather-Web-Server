@@ -1,8 +1,8 @@
 const config = {
     //DarkSky API
-    url: "https://api.darksky.net/forecast/9f4aa29a4a1f41f68c39112739d8c925/",
+    darkSkyUrl: "https://api.darksky.net/forecast/9cecf70bbbbf57cc76c9c9ea7cf37f7c/",
     mapBoxURL: "https://api.mapbox.com/geocoding/v5/mapbox.places/",
-    mapBoxAPIKey: "?access_token=pk.eyJ1IjoiZGVhbm11cnJheSIsImEiOiJjanY3OTM0MWowNHY0NGVudGVwdmY4MGRqIn0.KlMxE7Z-KiK_fJ9rR3N-BA&limit=1"
+    mapBoxAPIKey: "?access_token=pk.eyJ1IjoiZGVhbm11cnJheSIsImEiOiJjanhobTF3ZGowZWN3M3NvNXp5eXFuajF5In0.AdEuISb0lNtOaafXi6MTKg&limit=1"
 }
 
 module.exports = config; 
