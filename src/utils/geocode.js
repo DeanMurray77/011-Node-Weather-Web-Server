@@ -8,7 +8,7 @@ let mapBoxAPIKey;
 if(process.env.mapBoxURL && process.env.mapBoxAPIKey) {
     //If process.env vars defined, then use heroku stuff
     mapBoxURL = process.env.mapBoxURL;
-    mapBoxAPIKey = process.mapBoxAPIKey;
+    mapBoxAPIKey = process.env.mapBoxAPIKey;
 } else {
     //Not on Heroku, so we can require the local config file.
     const config = require('../config');
