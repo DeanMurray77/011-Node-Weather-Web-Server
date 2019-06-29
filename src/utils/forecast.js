@@ -1,8 +1,10 @@
 const request = require('request');
 const config = require('../config');
 
+const url = process.env.darkSkyUrl || config.darkSkyUrl;
+
 const forecast = (latitude, longitude, callback) => {
-    request( {url: config.darkSkyUrl+latitude+','+longitude, json: true}, (error, response) => {
+    request( {url: url+latitude+','+longitude, json: true}, (error, response) => {
         if(error) {
             callback('The system was unable to connect to the weather service.');
         } else if (response.body.error) {

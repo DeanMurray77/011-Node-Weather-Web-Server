@@ -1,12 +1,15 @@
 const config = require('../config');
 const request = require('request');
 
+const mapBoxURL = process.env.mapBoxURL || config.mapBoxURL;
+const mapBoxAPIKey = process.mapBoxAPIKey || config.mapBoxAPIKey;
+
 const geocode = (address, callback) => { //definition.
     // callback in definiton means that function will wait for an
     // error or response
 
     let encodedLocation = encodeURIComponent(address);
-    let mapBoxFinalURL = config.mapBoxURL+encodedLocation+'.json'+config.mapBoxAPIKey;
+    let mapBoxFinalURL = mapBoxURL+encodedLocation+'.json'+mapBoxAPIKey;
 
     //The second argument, combined with the callback() calls
     //(further down) indicate that it will wait for a response
